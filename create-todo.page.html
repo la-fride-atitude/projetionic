@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Create CV</ion-title>
+  <ion-buttons slot="start">
+    <ion-back-button></ion-back-button>
+  </ion-buttons>
+</ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="todoForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">Title</ion-label>
+      <!-- <ion-input formControlName="title" type="text" placeholder="Formation ou competence ou experence" required></ion-input> -->
+      <ion-select formControlName="title" interface="popover" placeholder="selection" required>
+        <ion-select-option value="Formation">    Formation    </ion-select-option>
+        <ion-select-option value="Experience">    Experience    </ion-select-option>
+        <ion-select-option value="competence">    Competence   </ion-select-option>
+      </ion-select>
+    </ion-item>
+<!-- 
+    <ion-item>
+    <ion-label position="floating">NOM</ion-label>
+    <ion-input formControlName="nom" type="text" required></ion-input>
+  </ion-item> -->
+
+    <ion-item>
+      <ion-label position="floating">Description</ion-label>
+      <ion-textarea rows="5" cols="20" placeholder="Entrer votre texte ici" formControlName="description" type="text" required>
+      </ion-textarea>
+     </ion-item>
+
+    <ion-button class="ion-margin-top" type="submit" expand="block" color="primary">Create</ion-button>
+  </form>
+</ion-content>
